@@ -4,15 +4,15 @@
 #
 Name     : R-gam
 Version  : 1.16
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/gam_1.16.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gam_1.16.tar.gz
 Summary  : Generalized Additive Models
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: R-gam-lib
+Requires: R-gam-lib = %{version}-%{release}
 BuildRequires : R-foreach
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 additive models, as described in chapter 7 of "Statistical Models in
@@ -35,11 +35,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532101559
+export SOURCE_DATE_EPOCH=1552808411
 
 %install
+export SOURCE_DATE_EPOCH=1552808411
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1532101559
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -74,8 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library gam|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  gam || :
 
 
 %files
@@ -103,7 +102,6 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/gam/help/paths.rds
 /usr/lib64/R/library/gam/html/00Index.html
 /usr/lib64/R/library/gam/html/R.css
-/usr/lib64/R/library/gam/libs/symbols.rds
 /usr/lib64/R/library/gam/ratfor/backfit.r
 /usr/lib64/R/library/gam/ratfor/backlo.r
 /usr/lib64/R/library/gam/ratfor/linear.r
