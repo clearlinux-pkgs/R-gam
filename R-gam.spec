@@ -4,14 +4,16 @@
 #
 Name     : R-gam
 Version  : 1.16
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/gam_1.16.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gam_1.16.tar.gz
 Summary  : Generalized Additive Models
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-gam-lib = %{version}-%{release}
+Requires: R-iterators
 BuildRequires : R-foreach
+BuildRequires : R-iterators
 BuildRequires : buildreq-R
 
 %description
@@ -35,10 +37,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552808411
+export SOURCE_DATE_EPOCH=1552956615
 
 %install
-export SOURCE_DATE_EPOCH=1552808411
+export SOURCE_DATE_EPOCH=1552956615
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
