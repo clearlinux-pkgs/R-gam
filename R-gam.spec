@@ -4,7 +4,7 @@
 #
 Name     : R-gam
 Version  : 1.16.1
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/gam_1.16.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gam_1.16.1.tar.gz
 Summary  : Generalized Additive Models
@@ -13,9 +13,7 @@ License  : GPL-2.0
 Requires: R-gam-lib = %{version}-%{release}
 Requires: R-foreach
 BuildRequires : R-foreach
-BuildRequires : R-iterators
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 additive models, as described in chapter 7 of "Statistical Models in
@@ -32,21 +30,22 @@ lib components for the R-gam package.
 
 %prep
 %setup -q -c -n gam
+cd %{_builddir}/gam
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571835027
+export SOURCE_DATE_EPOCH=1589575371
 
 %install
-export SOURCE_DATE_EPOCH=1571835027
+export SOURCE_DATE_EPOCH=1589575371
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
