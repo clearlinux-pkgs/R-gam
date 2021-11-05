@@ -4,7 +4,7 @@
 #
 Name     : R-gam
 Version  : 1.20
-Release  : 40
+Release  : 41
 URL      : https://cran.r-project.org/src/contrib/gam_1.20.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gam_1.20.tar.gz
 Summary  : Generalized Additive Models
