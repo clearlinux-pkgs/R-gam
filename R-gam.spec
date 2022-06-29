@@ -4,7 +4,7 @@
 #
 Name     : R-gam
 Version  : 1.20.1
-Release  : 47
+Release  : 48
 URL      : https://cran.r-project.org/src/contrib/gam_1.20.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gam_1.20.1.tar.gz
 Summary  : Generalized Additive Models
