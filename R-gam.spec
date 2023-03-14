@@ -4,7 +4,7 @@
 #
 Name     : R-gam
 Version  : 1.22.1
-Release  : 53
+Release  : 54
 URL      : https://cran.r-project.org/src/contrib/gam_1.22-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gam_1.22-1.tar.gz
 Summary  : Generalized Additive Models
@@ -14,9 +14,6 @@ Requires: R-gam-lib = %{version}-%{release}
 Requires: R-foreach
 BuildRequires : R-foreach
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 additive models, as described in chapter 7 of "Statistical Models in S" (Chambers and Hastie (eds), 1991), and "Generalized Additive Models" (Hastie and Tibshirani, 1990).
@@ -38,10 +35,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1674945322
+export SOURCE_DATE_EPOCH=1678820986
 
 %install
-export SOURCE_DATE_EPOCH=1674945322
+export SOURCE_DATE_EPOCH=1678820986
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
